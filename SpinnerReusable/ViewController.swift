@@ -81,7 +81,9 @@ final class ViewController: UIViewController {
     
     @objc
     private func didTapMyButtonAction() {
-        print("load data from view Model")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            print("load data from view Model")
+        }
     }
 
     @objc

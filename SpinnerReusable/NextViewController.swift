@@ -17,6 +17,9 @@ final class NextViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Next Screen"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            print("load data next screen from view Model")
+        }
     }
     
     // MARK: - Helpers
