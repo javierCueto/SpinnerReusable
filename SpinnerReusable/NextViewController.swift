@@ -17,8 +17,10 @@ final class NextViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "Next Screen"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        showSpinner()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             print("load data next screen from view Model")
+            self?.hideSpinner()
         }
     }
     
@@ -29,3 +31,4 @@ final class NextViewController: UIViewController {
 }
 
 // MARK: - Extensions here
+extension NextViewController: SpinnerDisplayable {}

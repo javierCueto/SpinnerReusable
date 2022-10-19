@@ -81,8 +81,10 @@ final class ViewController: UIViewController {
     
     @objc
     private func didTapMyButtonAction() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        showSpinner()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             print("load data from view Model")
+            self?.hideSpinner()
         }
     }
 
@@ -92,4 +94,6 @@ final class ViewController: UIViewController {
     }
 
 }
+
+extension ViewController: SpinnerDisplayable {}
 
